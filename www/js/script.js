@@ -1,21 +1,25 @@
-document.addEventListener("deviceready", onDeviceReady, false);
+//document.addEventListener("deviceready", onDeviceReady, false);
 
+// device APIs are available
+//
+//function onDeviceReady() {
 
-function onDeviceReady() {
+ //   $(document).ready(function(){ //jquery starts here and is inside the device ready function
 
-   $(document).ready(function(){ //jquery starts here and is inside the device ready function
+        //the next few lines are now the calling my plugins
+        //#deviceproperties is a paragraph in html that has an id deviceproperties
+        //#hideme is a span inside the paragaraph that has the id deviceproperties.inside the span is the statement that is saying 'loading device properties' and will be removed as soon as the script hide() runs
 
+       // $('#deviceProperties').prepend("<br>" + device.cordova
+       //     + "<br>" + device.platform
+       //     + "<br>" + device.uuid
+       //     + "<br>" + device.version
+       // );
 
-            $('#deviceProperties').prepend("<br>" + device.cordova
-           + "<br>" + device.platform
-           + "<br>" + device.uuid
-           + "<br>" + device.version
-       );
+        //$('#hideme').hide();//hide the loading device properties
+ //   });//lets end jquery`s document.ready
 
-        $('#hideme').hide();//hide the loading device properties
-   });//lets end jquery`s document.ready
-
-}//lets end cordova`s device ready
+//}//lets end cordova`s device ready
 
 
 /*  Jquery */

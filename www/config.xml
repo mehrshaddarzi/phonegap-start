@@ -6,7 +6,7 @@
         id        = "com.phonegap.helloworld"
         version   = "1.0.0">
 
-    <name>رزمایش شباب سپاه کربلا مازندران</name>
+    <name>رزمایش شباب مازندران</name>
 
     <description>
        سامانه رزمایش سپاه کربلا مازندران
@@ -120,6 +120,7 @@
     <!-- Added the following intents to support the removal of whitelist code from base cordova to a plugin -->
     <!-- Whitelist configuration. Refer to https://cordova.apache.org/docs/en/edge/guide_appdev_whitelist_index.md.html -->
     <plugin name="cordova-plugin-whitelist" version="1" />
+	<plugin name="cordova-plugin-crosswalk-webview" source="npm" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
