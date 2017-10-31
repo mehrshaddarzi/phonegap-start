@@ -188,7 +188,7 @@ select:focus {
 }
 /*****End Setting Page***/
 
-.overhang,.overhang{position:fixed;display:none;width:100%;z-index:9999;padding:15px 2px;top:0;left:0;right:0;text-align:center}
+.overhang,.overhang{position:fixed;display:none;width:100%;z-index:9999;padding:15px 2px;top:4.5%;left:0;right:0;text-align:center}
 .overhang-message{color:#FFF;font-size:13px;display: block;
    }
 .overhang-prompt-field{height:30px;width:250px;border-radius:5px;border:none;display:block;margin-left:auto;margin-right:auto;margin-top:15px;bottom:7px;position:relative;padding-left:3px;padding-right:3px;outline:0;font-size:12px}

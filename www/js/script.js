@@ -278,7 +278,6 @@ function onDeviceReady() {
             var nahieh = jQuery("select[name=mzn_nahieh]").val();
 
             if(name =="" || mobile =="" || codemeli == "") {
-
                 jQuery("body").overhang({type: 'error', html: true, message: 'لطفا تمامی فیلد ها را پر نمایید', upper: true});
 
             } else {
