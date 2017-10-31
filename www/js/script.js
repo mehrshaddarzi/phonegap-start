@@ -62,7 +62,7 @@ function onDeviceReady() {
                     var html = '';
 
 					if(mobile_number =="NO") {
-						jQuery("div#app_text").html('<div class="panel text-center" style="padding:25px;"> <i class="fa fa-exclamation-triangle"></i> خطای حق دسترسی <br> <div style="font-size:11px; margin-top:5px;"> شما حق دسترسی به استفاده از اپلیکیشن را ندارید</div> </div>');
+						jQuery("div#app_text").html('<div class="panel text-center" style="padding:25px;"> <i class="fa fa-exclamation-triangle"></i> دسترسی غیر مجاز <br> <div style="font-size:11px; margin-top:5px;"> محتویات اپلیکیشن برای دستگاه شما قابل بارگزاری نمی باشد</div> </div>');
 					} else {
 						
 						if(data.error =="yes") {
