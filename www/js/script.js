@@ -2,6 +2,14 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 
 function onDeviceReady() {
+	
+	window.plugins.sim.getSimInfo(successCallback, errorCallback);
+	
+	function successCallback(result) {
+		alert(JSON.stringify(result));
+	}
+	
+	
     /*  Jquery */
     jQuery(document).ready(function($) {
 
