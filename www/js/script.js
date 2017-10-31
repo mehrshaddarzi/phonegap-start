@@ -10,8 +10,14 @@ function onDeviceReady() {
 	function successCallback(result) {
 		if("cards" in result) {
 			var mobile_number = result['cards'][0]['phoneNumber']; 
+			
+			
+			alert(mobile_number);
 		} 
 	}
+	
+	
+	alert(mobile_number);
 	
 	function errorCallback(error) {
 		//alert(JSON.stringify(error));
