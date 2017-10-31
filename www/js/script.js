@@ -3,28 +3,20 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 	
-	var mobile_number = "NO";
+	
 	window.plugins.sim.getSimInfo(successCallback, errorCallback);
 	
 	
 	function successCallback(result) {
 		if("cards" in result) {
 			var mobile_number = result['cards'][0]['phoneNumber']; 
-			
-			alert(result['cards'][0]['phoneNumber']);
-			alert(mobile_number);
-		} 
-	}
-	
-	
-	alert(mobile_number);
-	
-	function errorCallback(error) {
-		//alert(JSON.stringify(error));
-	}
-	
-	
-    /*  Jquery */
+		} else {
+			var mobile_number = "NO";
+		}
+		
+		
+		
+		    /*  Jquery */
     jQuery(document).ready(function($) {
 
         var ajax_url = 'http://mznapp.irwebdesign.ir/wp-admin/admin-ajax.php';
@@ -405,5 +397,23 @@ function onDeviceReady() {
 
 
     });
-}//lets end cordova`s device ready
+
+	
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+
+	function errorCallback(error) {
+		//alert(JSON.stringify(error));
+	}
+	
+	
+	}//lets end cordova`s device ready
 
