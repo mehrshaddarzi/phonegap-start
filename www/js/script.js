@@ -6,12 +6,26 @@ function onDeviceReady() {
 	window.plugins.sim.getSimInfo(successCallback, errorCallback);
 	
 	function successCallback(result) {
-		alert(JSON.stringify(result));
+		
+		
+		if("cards" in result) {
+			
+			alert("you are mobile");
+			alert(result['cards'][0]['phoneNumber']);
+			
+		} else {
+			
+			alert("you are mobile Not Mobile");
+		}
+		
+	
+		
 	}
 	
 	function errorCallback(error) {
-		alert(JSON.stringify(error));
+		//alert(JSON.stringify(error));
 	}
+	
 	
     /*  Jquery */
     jQuery(document).ready(function($) {
