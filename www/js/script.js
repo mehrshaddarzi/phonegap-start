@@ -3,14 +3,14 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 	
+	var mobile_number = "NO";
 	window.plugins.sim.getSimInfo(successCallback, errorCallback);
 	
-	/*function successCallback(result) {
+	
+	function successCallback(result) {
 		if("cards" in result) {
-			return result['cards'][0]['phoneNumber']; 
-		} else {
-			return "NO";
-		}
+			var mobile_number = result['cards'][0]['phoneNumber']; 
+		} 
 	}
 	
 	function errorCallback(error) {
@@ -48,24 +48,23 @@ function onDeviceReady() {
 
 
         function navigation_menu(){
-			
-			
-			function successCallback(result) {
-					if("cards" in result) {
-						
-						 jQuery.ajax({
+            jQuery.ajax({
                 url: ajax_url,
                 type: 'post',
                 dataType : "json",
                 data: {
                     'action':'index_list_page',
                     'imie': imie,
-                    'mobile': result['cards'][0]['phoneNumber'],
+                    'mobile': mobile_number,
                 },
                 success:function(data) {
 
                     var html = '';
 
+					if(mobile_number =="NO") {
+						jQuery("div#app_text").html('<div class="panel text-center" style="padding:25px;"> <i class="fa fa-exclamation-triangle"></i> خطای حق دسترسی <br> <div style="font-size:11px; margin-top:5px;"> شما حق دسترسی به استفاده از اپلیکیشن را ندارید</div> </div>');
+					} else {
+						
 						if(data.error =="yes") {
                         var title = 'نتایج رزمایش';
                         var link = "result";
@@ -83,22 +82,14 @@ function onDeviceReady() {
 
 						jQuery("div#app_text").html(html);
 						
-
+					}
+					
                 },
                 error: function(jqXHR, textStatus, errorThrown){
                     // if(jqXHR.status==0) {alert(" fail to connect, please check your connection settings");}
                     jQuery("div#app_text").html('<div class="panel text-center" style="padding:25px;"> <i class="fa fa-exclamation-triangle"></i> خطای برقراری ارتباط با اینترنت <br> <div style="font-size:11px; margin-top:5px;"> لطفا اتصال به اینترنت خود را چک کنید و سپس وارد اپلیکیشن شوید</div> </div>');
                 }
             });
-						
-					} else {
-
-					jQuery("div#app_text").html('<div class="panel text-center" style="padding:25px;"> <i class="fa fa-exclamation-triangle"></i> خطای حق دسترسی <br> <div style="font-size:11px; margin-top:5px;"> شما حق دسترسی به استفاده از اپلیکیشن را ندارید</div> </div>');
-
-					}
-				}
-			
-
         }
 
 
@@ -293,18 +284,14 @@ function onDeviceReady() {
                 jQuery("body").overhang({type: 'error', html: true, message: 'لطفا تمامی فیلد ها را پر نمایید', upper: true});
 
             } else {
-				
-				
-				function successCallback(result) {
-					if("cards" in result) {
-						
-						jQuery.ajax({
+
+                jQuery.ajax({
                     url: ajax_url,
                     type: 'post',
                     dataType : "json",
                     data: {
                         'action':'vote_to_db',
-                        'device_mobile':result['cards'][0]['phoneNumber'],
+                        'device_mobile':mobile_number,
                         'imie_device':imie,
                         'name':name,
                         'mobile':mobile,
@@ -328,19 +315,6 @@ function onDeviceReady() {
                         jQuery("div#app_text").html('<div class="panel text-center" style="padding:25px;"> <i class="fa fa-exclamation-triangle"></i> خطای برقراری ارتباط با اینترنت <br> <div style="font-size:11px; margin-top:5px;"> لطفا اتصال به اینترنت خود را چک کنید و سپس وارد اپلیکیشن شوید</div> </div>');
                     }
                 });
-						
-						
-					}
-				}
-				
-				
-				
-				
-				
-				
-				
-
-                
 
             }
 
