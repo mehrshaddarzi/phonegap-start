@@ -188,7 +188,14 @@ select:focus {
 }
 /*****End Setting Page***/
 
-.overhang,.overhang{position:fixed;display:none;width:100%;z-index:9999;padding:15px 2px;top:0;left:0;right:0;text-align:center}.overhang-message{color:#FFF;font-size:13px}.overhang-prompt-field{height:30px;width:250px;border-radius:5px;border:none;display:block;margin-left:auto;margin-right:auto;margin-top:15px;bottom:7px;position:relative;padding-left:3px;padding-right:3px;outline:0;font-size:12px}.overhang-no-option,.overhang-yes-option{min-width:50px;height:30px;border:none;outline:0;border-radius:4px;font-size:13px;color:#FFF;cursor:pointer;margin:0 6px}.overhang-yes-option{margin-left:15px}.overhang-close{vertical-align:middle;cursor:pointer;margin-top:-4px;padding-left:13px;font-size:2.5em;font-weight:700;display:inline-block;line-height:30px}.overhang-close:after{content:"\00d7"}
+.overhang,.overhang{position:fixed;display:none;width:100%;z-index:9999;padding:15px 2px;top:0;left:0;right:0;text-align:center}
+.overhang-message{color:#FFF;font-size:13px;display: block;
+   }
+.overhang-prompt-field{height:30px;width:250px;border-radius:5px;border:none;display:block;margin-left:auto;margin-right:auto;margin-top:15px;bottom:7px;position:relative;padding-left:3px;padding-right:3px;outline:0;font-size:12px}
+.overhang-no-option,.overhang-yes-option{    min-width:50px;height:30px;border:none;outline:0;border-radius:4px;font-size:13px;color:#FFF;cursor:pointer;margin:0 6px; margin-top: 15px;}
+.overhang-yes-option{margin-left:15px}
+.overhang-close{ vertical-align:middle;cursor:pointer;margin-top:-4px;padding-left:13px;font-size:2.5em;font-weight:700;display:inline-block;line-height:30px; display:none;}
+.overhang-close:after{content:"\00d7"}
 
 /*
 html {
@@ -205,18 +212,19 @@ body {
 }
 
 .home-btn {
-	display: block;
-	margin-bottom: 5%;
-	padding: 19px;
-	border: 0px;
-	color: #403636;
-	font-size: 18px;
-	font-weight: bold;
+    display: block;
+    margin-bottom: 6%;
+    padding: 12px;
+    border: 0px;
+    color: #403636 !important;
+    font-size: 15px;
+    font-weight: 300;
+    background: #fff !important;
+    box-shadow: inset 0 3px 5px transparent !important;
+    border-color: transparent !important;
 }
 
-
 .footer {
-	margin-top:10px;
 	position: fixed;
 	bottom: 0px;
 	left: 0px;

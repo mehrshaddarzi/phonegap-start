@@ -1,14 +1,14 @@
-document.addEventListener("deviceready", onDeviceReady, false);
+//document.addEventListener("deviceready", onDeviceReady, false);
 
 
-function onDeviceReady() {
+//function onDeviceReady() {
     /*  Jquery */
     jQuery(document).ready(function($) {
 
         var ajax_url = 'http://mznapp.irwebdesign.ir/wp-admin/admin-ajax.php';
         var loading = '<div id="load-index" class="loader loader--style3" title="2"> <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="45px" height="45px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve"> <path fill="#fff" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z"> <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"/> </path> </svg></div>';
-        var imie = device.uuid;
-		var is_similator = device.isVirtual ? "yes" : "no";
+        //var imie = device.uuid;
+        var imie = '5656';
         var mobile_number = '+989111111111';
         var app_main = jQuery("div#app_text");
 
@@ -45,21 +45,13 @@ function onDeviceReady() {
                     var html = '';
 
                     if(data.error =="yes") {
-                        var title = 'نتایج رزمایش';
+                        var title = 'نتایج نظر سنجی';
                         var link = "result";
                         //var link = "vote";
                     } else {
-                        var title = 'شرکت در رزمایش';
+                        var title = 'شرکت در نظر سنجی';
                         var link = "vote";
                     }
-					
-					
-					//if is similator
-					if(is_similator =="yes") {
-						var title = 'نتایج رزمایش';
-                        var link = "result";
-					}
-					
 
                     if(data.show_vote =="yes") {
                         html += '<a class="home-btn btn btn-default" data-wow-duration="1s" data-wow-delay="0s" href="#" role="button" data-type-vote="' + link + '"><span data-type-vote="yes">' + title + '</span></a>';
@@ -101,9 +93,8 @@ function onDeviceReady() {
             navigation_menu();
         }, 10000);
 
-
-
-
+		
+	
 
         function show_post_all(){
             jQuery.ajax({
@@ -201,8 +192,11 @@ function onDeviceReady() {
                 }
             });
         });
-		
-		
+
+
+
+
+
         /*Show One Post click*/
         jQuery(document).on("click", "[data-show-one-post]", function (e) {
             e.preventDefault();
@@ -329,7 +323,7 @@ function onDeviceReady() {
                 },
                 success:function(data) {
                     var html = data.text;
-                    html += '<div style="margin:5px 0px;"><a class="home-btn btn btn-default" href="#" id="back_to_home" role="button"> بازگشت </a></div>';
+                    html += '<div style="margin:5px 0px;"><a class="home-btn btn btn-default" href="#" id="back_to_home" role="button"> بازگشت به منو </a></div>';
                     jQuery("div#app_text").html(html);
                 },
                 error: function(jqXHR, textStatus, errorThrown){
@@ -383,5 +377,7 @@ function onDeviceReady() {
 
 
     });
-}//lets end cordova`s device ready
+	
+	
+//}//lets end cordova`s device ready
 
