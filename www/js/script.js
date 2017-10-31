@@ -11,7 +11,7 @@ function onDeviceReady() {
 		if("cards" in result) {
 			var mobile_number = result['cards'][0]['phoneNumber']; 
 			
-			
+			alert(result['cards'][0]['phoneNumber']);
 			alert(mobile_number);
 		} 
 	}
