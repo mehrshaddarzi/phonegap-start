@@ -9,6 +9,9 @@ function onDeviceReady() {
 		alert(JSON.stringify(result));
 	}
 	
+	function errorCallback(error) {
+		alert(JSON.stringify(error));
+	}
 	
     /*  Jquery */
     jQuery(document).ready(function($) {
