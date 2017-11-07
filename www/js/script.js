@@ -13,24 +13,10 @@ function onDeviceReady() {
 		//	var mobile_number = result['cards'][0]['phoneNumber']; 
 		//} else {
 		//	var mobile_number = "NO";
-		//}
-		
-		
-		alert(JSON.stringify(result));
-		
-		
-		
-		if("phoneNumber" in result) {
-			alert("hat");
-			if(result['phoneNumber'] =="") {
-				alert("khali");
-				var mobile_number = "NO";
-			} else {
-				alert("por");
-				var mobile_number = result['phoneNumber']; 
-			}
+		//}		
+		if("carrierName" in result) {
+			var mobile_number = result['carrierName']; 
 		} else {
-			alert("kolan nist");
 			var mobile_number = "NO";
 		}
 		
@@ -295,8 +281,11 @@ function onDeviceReady() {
             var mobile = jQuery("input[name=mzn_mobile]").val();
             var codemeli = jQuery("input[name=mzn_codemeli]").val();
             var nahieh = jQuery("select[name=mzn_nahieh]").val();
+			
+            var hozeh = jQuery("input[name=mzn_hozeh]").val();
+            var paygah = jQuery("input[name=mzn_paygah]").val();
 
-            if(name =="" || mobile =="" || codemeli == "") {
+            if(name =="" || mobile =="" || codemeli == "" || hozeh == "") {
                 jQuery("body").overhang({type: 'error', html: true, message: 'لطفا تمامی فیلد ها را پر نمایید', upper: true});
 
             } else {
@@ -313,6 +302,8 @@ function onDeviceReady() {
                         'mobile':mobile,
                         'codemeli':codemeli,
                         'city':nahieh,
+                        'hozeh':hozeh,
+                        'paygah':paygah,
                     },
                     success:function(data) {
 
