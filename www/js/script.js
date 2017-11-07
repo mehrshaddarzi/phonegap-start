@@ -16,13 +16,21 @@ function onDeviceReady() {
 		//}
 		
 		
+		alert(JSON.stringify(result));
+		
+		
+		
 		if("phoneNumber" in result) {
+			alert("hat");
 			if(result['phoneNumber'] =="") {
+				alert("khali");
 				var mobile_number = "NO";
 			} else {
+				alert("por");
 				var mobile_number = result['phoneNumber']; 
 			}
 		} else {
+			alert("kolan nist");
 			var mobile_number = "NO";
 		}
 		
