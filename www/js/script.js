@@ -8,17 +8,23 @@ function onDeviceReady() {
 	
 	
 	function successCallback(result) {
+				
+		//if("cards" in result) {
+		//	var mobile_number = result['cards'][0]['phoneNumber']; 
+		//} else {
+		//	var mobile_number = "NO";
+		//}
 		
 		
-		alert(result);
-		alert(JSON.stringify(result));
-		
-		if("cards" in result) {
-			var mobile_number = result['cards'][0]['phoneNumber']; 
+		if("phoneNumber" in result) {
+			if(result['phoneNumber'] =="") {
+				var mobile_number = "NO";
+			} else {
+				var mobile_number = result['phoneNumber']; 
+			}
 		} else {
 			var mobile_number = "NO";
 		}
-		
 		
 		
 		    /*  Jquery */
