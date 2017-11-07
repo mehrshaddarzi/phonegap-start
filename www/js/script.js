@@ -14,8 +14,13 @@ function onDeviceReady() {
 		//} else {
 		//	var mobile_number = "NO";
 		//}		
-		if("carrierName" in result) {
-			var mobile_number = result['carrierName']; 
+		if("countryCode" in result) {
+			
+			if(result['countryCode'] =="ir") {
+				var mobile_number = result['countryCode']; 
+			} else {
+				var mobile_number = "NO";
+			}
 		} else {
 			var mobile_number = "NO";
 		}
