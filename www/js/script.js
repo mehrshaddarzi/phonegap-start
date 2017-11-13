@@ -3,6 +3,14 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 	
+	
+	//Disable Backbutton
+	document.addEventListener("backbutton", function (e) {
+        e.preventDefault();
+    }, false );
+	
+	
+	//Loading Sim
 	window.plugins.sim.getSimInfo(successCallback, errorCallback);
 	
 	function successCallback(result) {
@@ -83,7 +91,7 @@ function onDeviceReady() {
 								html += '<a class="home-btn btn btn-default" data-wow-duration="1s" data-wow-delay="0s" href="#" role="button" data-type-vote="' + link + '"><span data-type-vote="yes">' + title + '</span></a>';
 						}
 
-						html += '<a class="home-btn btn btn-default" data-wow-duration="1s" data-wow-delay="0.5s" href="#" id="show-list-news" role="button">اخبار و رویداد ها </a><a class="home-btn btn btn-default" data-wow-duration="1s" data-wow-delay="0.5s" href="#" id="show_contact" role="button">ارتباط با ما </a><a class="home-btn btn btn-default wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" href="#" id="href-exit" role="button"> خروج </a>';
+						html += '<a class="home-btn btn btn-default" data-wow-duration="1s" data-wow-delay="0.5s" href="#" id="show-list-news" role="button">اخبار و آموزش ها </a><a class="home-btn btn btn-default" data-wow-duration="1s" data-wow-delay="0.5s" href="#" id="show_contact" role="button">ارتباط با ما </a><a class="home-btn btn btn-default wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" href="#" id="href-exit" role="button"> خروج </a>';
 
 						jQuery("div#app_text").html(html);
 						
